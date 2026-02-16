@@ -1,10 +1,10 @@
 :root {
-  --bg: #07090f;
-  --panel: rgba(20, 24, 40, 0.76);
-  --line: rgba(157, 191, 255, 0.26);
-  --text: #eef3ff;
-  --muted: #9aa7c2;
-  --blue: #4fa6ff;
+  --bg: #12150f;
+  --panel: rgba(35, 43, 24, 0.76);
+  --line: rgba(203, 184, 109, 0.28);
+  --text: #f4f0de;
+  --muted: #c9c3a9;
+  --accent: #f4ce3a;
 }
 
 * {
@@ -14,18 +14,23 @@
 body {
   margin: 0;
   font-family: "Manrope", sans-serif;
-  background: radial-gradient(circle at 74% 20%, rgba(62, 122, 255, 0.2), transparent 30%), #07090f;
+  background:
+    radial-gradient(circle at 74% 20%, rgba(132, 180, 232, 0.2), transparent 30%),
+    radial-gradient(circle at 14% 82%, rgba(244, 206, 58, 0.1), transparent 35%),
+    var(--bg);
   color: var(--text);
   min-height: 100vh;
+  background-color: var(--bg);
 }
 
 .backdrop {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 8%, rgba(76, 142, 255, 0.1), transparent 36%),
-    radial-gradient(circle at 88% 72%, rgba(82, 201, 255, 0.09), transparent 40%);
+    radial-gradient(circle at 20% 8%, rgba(244, 206, 58, 0.1), transparent 36%),
+    radial-gradient(circle at 88% 72%, rgba(132, 180, 232, 0.1), transparent 40%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .grain {
@@ -35,12 +40,14 @@ body {
   background-image: radial-gradient(#fff 0.6px, transparent 0.6px);
   background-size: 3px 3px;
   pointer-events: none;
+  z-index: 0;
 }
 
 .container {
   width: min(1080px, 92vw);
   margin: 1.2rem auto 2.4rem;
   position: relative;
+  z-index: 1;
 }
 
 .topbar {
@@ -50,13 +57,13 @@ body {
   gap: 1rem;
   padding: 0.55rem 0.8rem;
   border: 1px solid var(--line);
-  background: linear-gradient(130deg, rgba(108, 145, 228, 0.12), rgba(81, 114, 214, 0.06));
+  background: linear-gradient(130deg, rgba(212, 193, 121, 0.13), rgba(132, 180, 232, 0.08));
   border-radius: 14px;
   backdrop-filter: blur(14px) saturate(130%);
 }
 
 .brand {
-  color: #f2f6ff;
+  color: #fff9e8;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 800;
@@ -68,13 +75,13 @@ body {
 }
 
 .right-nav a {
-  color: #d1def8;
+  color: #ece5cb;
   text-decoration: none;
   font-weight: 600;
 }
 
 .right-nav a[aria-current="page"] {
-  color: var(--blue);
+  color: var(--accent);
 }
 
 main {
@@ -85,13 +92,13 @@ main {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 1.3rem 1.4rem;
-  background: linear-gradient(140deg, rgba(40, 58, 97, 0.42), rgba(20, 24, 40, 0.56));
+  background: linear-gradient(140deg, rgba(82, 98, 55, 0.42), rgba(35, 43, 24, 0.56));
   backdrop-filter: blur(14px);
 }
 
 .eyebrow {
   margin: 0;
-  color: var(--blue);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.13em;
   font-weight: 700;
@@ -140,13 +147,13 @@ h1 {
 .project-card a {
   display: inline-block;
   margin-top: 0.9rem;
-  color: #98cbff;
+  color: #f1d875;
   text-decoration: none;
   font-weight: 700;
 }
 
 .project-card a:hover {
-  color: #b8dcff;
+  color: #f8e7ab;
 }
 
 @media (max-width: 760px) {
@@ -156,5 +163,18 @@ h1 {
 
   .right-nav {
     gap: 0.9rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .backdrop,
+  .grain {
+    display: none;
+  }
+
+  .topbar,
+  .hero {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
