@@ -3,103 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Daniel Raj built Student-ERP: a local-first aviation training management system with attendance, fees, and Excel sync." />
-  <title>Daniel Raj | Student-ERP</title>
+  <meta name="description" content="Portfolio landing page for Daniel Raj, featuring Student-ERP and project links." />
+  <title>Daniel Raj | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="noise"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <a class="brand" href="#">@thedanielraj</a>
-    <a class="cta" href="https://github.com/thedanielraj/Student-ERP" target="_blank" rel="noreferrer">Student-ERP Repo</a>
-  </header>
-
-  <main>
-    <section class="hero" id="heroPanel">
-      <div class="orb orb-a"></div>
-      <div class="orb orb-b"></div>
-      <p class="kicker">FEATURED PINNED PROJECT</p>
-      <h1>
-        Student-ERP
-        <span>A local-first aviation training management system by Daniel Raj.</span>
-      </h1>
-      <p class="summary">
-        Built during my internship at Arunand's Aviation Institute, Bangalore. It unifies attendance tracking,
-        fee recording, role-based access, receipt uploads, and Excel sync in one practical web app.
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="https://github.com/thedanielraj/Student-ERP" target="_blank" rel="noreferrer">Open Repository</a>
-        <a class="btn ghost" href="#projects">Explore Features</a>
+  <div class="container">
+    <header class="topbar">
+      <div class="left-nav">
+        <a class="brand" href="https://github.com/thedanielraj" target="_blank" rel="noreferrer">@thedanielraj</a>
+        <button class="search-pill" type="button" aria-label="Search">
+          Search
+          <span>Ctrl K</span>
+        </button>
       </div>
-      <div class="metrics" aria-label="Project metrics">
-        <article>
-          <p class="metric-label">Backend</p>
-          <p class="metric-value">FastAPI + Python</p>
-        </article>
-        <article>
-          <p class="metric-label">Data Layer</p>
-          <p class="metric-value">SQLite + Excel Sync</p>
-        </article>
-        <article>
-          <p class="metric-label">API Surface</p>
-          <p class="metric-value">14 Endpoints</p>
-        </article>
-      </div>
-    </section>
+      <nav class="right-nav" aria-label="Main navigation">
+        <a href="#">Home</a>
+        <a href="#">Notes</a>
+        <a href="#projects">Projects</a>
+        <a href="https://github.com/thedanielraj" target="_blank" rel="noreferrer">Socials</a>
+      </nav>
+    </header>
 
-    <section id="projects" class="grid-wrap">
-      <article class="card card-large">
-        <p class="label">Problem Solved</p>
-        <h2>From spreadsheet chaos to one operational dashboard</h2>
-        <p>Student-ERP replaces scattered manual workflows with a structured interface for students, attendance, fees, and reporting.</p>
-      </article>
-      <article class="card">
-        <p class="label">Access Control</p>
-        <h3>Role-based login</h3>
-        <p>Superuser can manage everyone, while students view only their own attendance, fees, and remaining balance.</p>
-      </article>
-      <article class="card">
-        <p class="label">Attendance Engine</p>
-        <h3>UI + Excel sync</h3>
-        <p>Attendance is recorded in the web app and synchronized with <code>attendance_master.xlsm</code> for institute continuity.</p>
-      </article>
-      <article class="card">
-        <p class="label">Finance Workflow</p>
-        <h3>Fee entries + receipts</h3>
-        <p>Payment logging supports uploaded receipts and exposes student-facing balance tracking for transparency.</p>
-      </article>
-    </section>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>
+            <span class="accent">daniel.</span>
+            Student Builder
+          </h1>
+          <p class="tagline">Code fast. Learn faster. Ship useful things.</p>
+          <a class="hero-btn" href="https://github.com/thedanielraj" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+        <div class="hero-visual" role="img" aria-label="Abstract blue glass visual"></div>
+      </section>
 
-    <section class="ticker" aria-label="Student ERP highlights">
-      <div class="ticker-track">
-        <span>student-erp</span>
-        <span>fastapi backend</span>
-        <span>sqlite persistence</span>
-        <span>attendance by date</span>
-        <span>fee receipt uploads</span>
-        <span>excel synchronization</span>
-        <span>role-based auth</span>
-        <span>local-first workflow</span>
-        <span>student-erp</span>
-        <span>fastapi backend</span>
-        <span>sqlite persistence</span>
-        <span>attendance by date</span>
-        <span>fee receipt uploads</span>
-        <span>excel synchronization</span>
-        <span>role-based auth</span>
-        <span>local-first workflow</span>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>Primary spotlight: Student-ERP. Explore all work on GitHub.</p>
-  </footer>
+      <section id="projects" class="cards">
+        <a class="card" href="#" aria-label="Notes section">
+          <div class="icon">N</div>
+          <h2>Notes</h2>
+          <p>Collection of personal notes, snippets, and useful references.</p>
+        </a>
+        <a class="card" href="https://github.com/thedanielraj/Student-ERP" target="_blank" rel="noreferrer" aria-label="Student ERP project">
+          <div class="icon">P</div>
+          <h2>Projects</h2>
+          <p>Student-ERP: aviation training ERP with attendance, fees, and Excel sync.</p>
+        </a>
+        <a class="card" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer" aria-label="Random card">
+          <div class="icon">R</div>
+          <h2>Random</h2>
+          <p>I haven't decided what to do with this card yet.</p>
+        </a>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
