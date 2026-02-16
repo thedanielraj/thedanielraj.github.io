@@ -19,6 +19,18 @@ const commands = [
     external: false,
   },
   {
+    label: "Notes",
+    description: "Open notes and blog posts",
+    url: "/notes/",
+    external: false,
+  },
+  {
+    label: "My Band Post",
+    description: "Read the band story post",
+    url: "/notes/my-band.html",
+    external: false,
+  },
+  {
     label: "Student-ERP Repo",
     description: "GitHub repository",
     url: "https://github.com/thedanielraj/Student-ERP",

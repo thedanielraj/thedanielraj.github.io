@@ -137,8 +137,17 @@ body {
   stroke-width: 1.8;
 }
 
+.social-link polygon {
+  fill: #efe6c7;
+  stroke: none;
+}
+
 .social-link:hover svg {
   stroke: var(--accent);
+}
+
+.social-link:hover polygon {
+  fill: var(--accent);
 }
 
 main {
