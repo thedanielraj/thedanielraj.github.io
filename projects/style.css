@@ -123,6 +123,12 @@ h1 {
   gap: 0.95rem;
 }
 
+.project-status {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .project-card {
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -154,6 +160,12 @@ h1 {
 
 .project-card a:hover {
   color: #f8e7ab;
+}
+
+.project-meta {
+  margin-top: 0.65rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
 }
 
 @media (max-width: 760px) {
