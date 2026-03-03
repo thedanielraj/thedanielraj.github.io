@@ -1,10 +1,12 @@
 :root {
-  --bg: #12150f;
-  --panel: rgba(35, 43, 24, 0.76);
-  --line: rgba(203, 184, 109, 0.28);
-  --text: #f4f0de;
-  --muted: #c9c3a9;
-  --accent: #f4ce3a;
+  --bg: #0f0d0b;
+  --bg-soft: #1a1410;
+  --text: #f5ecd9;
+  --muted: #cfbf9e;
+  --line: rgba(210, 177, 111, 0.34);
+  --panel: rgba(39, 29, 21, 0.76);
+  --gold: #e7c46f;
+  --sky: #6a8db6;
 }
 
 * {
@@ -13,39 +15,44 @@
 
 body {
   margin: 0;
-  font-family: "Manrope", sans-serif;
-  background:
-    radial-gradient(circle at 74% 20%, rgba(132, 180, 232, 0.2), transparent 30%),
-    radial-gradient(circle at 14% 82%, rgba(244, 206, 58, 0.1), transparent 35%),
-    var(--bg);
-  color: var(--text);
   min-height: 100vh;
+  color: var(--text);
+  font-family: "Cormorant Garamond", serif;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(106, 141, 182, 0.24), transparent 34%),
+    radial-gradient(circle at 15% 86%, rgba(231, 196, 111, 0.16), transparent 40%),
+    linear-gradient(145deg, var(--bg) 0%, var(--bg-soft) 56%, #120e0b 100%);
   background-color: var(--bg);
 }
 
-.backdrop {
+.backdrop,
+.grain {
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(circle at 20% 8%, rgba(244, 206, 58, 0.1), transparent 36%),
-    radial-gradient(circle at 88% 72%, rgba(132, 180, 232, 0.1), transparent 40%);
   pointer-events: none;
   z-index: 0;
 }
 
+.backdrop {
+  background:
+    repeating-linear-gradient(
+      118deg,
+      transparent 0,
+      transparent 28px,
+      rgba(255, 239, 208, 0.024) 30px,
+      transparent 62px
+    );
+}
+
 .grain {
-  position: fixed;
-  inset: 0;
-  opacity: 0.06;
+  opacity: 0.05;
   background-image: radial-gradient(#fff 0.6px, transparent 0.6px);
   background-size: 3px 3px;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .container {
   width: min(1080px, 92vw);
-  margin: 1.2rem auto 2.4rem;
+  margin: 1.1rem auto 2.8rem;
   position: relative;
   z-index: 1;
 }
@@ -55,65 +62,81 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 0.55rem 0.8rem;
   border: 1px solid var(--line);
-  background: linear-gradient(130deg, rgba(212, 193, 121, 0.13), rgba(132, 180, 232, 0.08));
-  border-radius: 14px;
-  backdrop-filter: blur(14px) saturate(130%);
+  border-radius: 16px;
+  padding: 0.58rem 0.82rem;
+  background:
+    linear-gradient(140deg, rgba(231, 196, 111, 0.12), rgba(106, 141, 182, 0.08)),
+    linear-gradient(140deg, rgba(40, 30, 22, 0.85), rgba(28, 22, 16, 0.82));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 239, 205, 0.34),
+    0 16px 34px rgba(0, 0, 0, 0.35);
 }
 
 .brand {
-  color: #fff9e8;
   text-decoration: none;
+  color: #fff3d9;
+  font-family: "Cinzel", serif;
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .right-nav {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.05rem;
 }
 
 .right-nav a {
-  color: #ece5cb;
   text-decoration: none;
-  font-weight: 600;
+  color: #ebdebf;
+  font: 600 0.86rem "Manrope", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .right-nav a[aria-current="page"] {
-  color: var(--accent);
+  color: var(--gold);
 }
 
 main {
-  margin-top: 2.1rem;
+  margin-top: 2rem;
 }
 
 .hero {
   border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 1.3rem 1.4rem;
-  background: linear-gradient(140deg, rgba(82, 98, 55, 0.42), rgba(35, 43, 24, 0.56));
-  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 1.25rem 1.3rem;
+  background:
+    linear-gradient(122deg, rgba(231, 196, 111, 0.08), rgba(106, 141, 182, 0.04)),
+    linear-gradient(145deg, rgba(45, 33, 23, 0.74), rgba(31, 24, 18, 0.86));
 }
 
 .eyebrow {
   margin: 0;
-  color: var(--accent);
+  color: var(--gold);
   text-transform: uppercase;
-  letter-spacing: 0.13em;
-  font-weight: 700;
-  font-size: 0.76rem;
+  font: 700 0.75rem "Manrope", sans-serif;
+  letter-spacing: 0.12em;
 }
 
 h1 {
-  margin: 0.48rem 0 0.25rem;
-  font-size: clamp(1.85rem, 4vw, 3rem);
-  letter-spacing: -0.03em;
+  margin: 0.45rem 0 0.2rem;
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 0.02em;
 }
 
 .subtitle {
   margin: 0;
   color: var(--muted);
+  font-size: 1.03rem;
+}
+
+.project-status {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font: 500 0.95rem "Manrope", sans-serif;
 }
 
 .project-grid {
@@ -123,49 +146,49 @@ h1 {
   gap: 0.95rem;
 }
 
-.project-status {
-  margin: 1rem 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
 .project-card {
   border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 1.1rem 1.15rem;
-  background: linear-gradient(140deg, var(--panel), rgba(33, 41, 68, 0.65));
+  border-radius: 14px 14px 24px 24px;
+  padding: 1.05rem 1.15rem;
+  background:
+    linear-gradient(180deg, rgba(231, 196, 111, 0.08), transparent 36%),
+    linear-gradient(140deg, var(--panel), rgba(53, 39, 28, 0.68));
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 12px 30px rgba(5, 9, 21, 0.34);
+    inset 0 1px 0 rgba(255, 239, 207, 0.2),
+    0 16px 34px rgba(0, 0, 0, 0.34);
 }
 
 .project-card h2 {
   margin: 0 0 0.45rem;
+  font-family: "Cinzel", serif;
   font-size: 1.2rem;
 }
 
 .project-card p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.45;
+  font-size: 1.02rem;
+}
+
+.project-meta {
+  margin-top: 0.62rem;
+  font-size: 0.84rem;
+  opacity: 0.9;
 }
 
 .project-card a {
   display: inline-block;
   margin-top: 0.9rem;
-  color: #f1d875;
+  color: #f2d98a;
   text-decoration: none;
-  font-weight: 700;
+  font: 700 0.84rem "Manrope", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .project-card a:hover {
-  color: #f8e7ab;
-}
-
-.project-meta {
-  margin-top: 0.65rem;
-  font-size: 0.85rem;
-  opacity: 0.9;
+  color: #ffecc0;
 }
 
 @media (max-width: 760px) {
@@ -174,7 +197,7 @@ h1 {
   }
 
   .right-nav {
-    gap: 0.9rem;
+    gap: 0.78rem;
   }
 }
 
@@ -184,8 +207,7 @@ h1 {
     display: none;
   }
 
-  .topbar,
-  .hero {
+  .topbar {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
